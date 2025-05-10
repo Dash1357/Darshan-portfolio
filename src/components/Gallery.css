@@ -1,0 +1,65 @@
+.gallery-wrapper {
+  background: #111;
+  color: white;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.tile-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Perfect square */
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tile-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ✅ Fix for video fullscreen scaling */
+video:fullscreen {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  position: static !important;
+}
+
+/* ✅ Safari fallback */
+video:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  position: static !important;
+}

@@ -6,9 +6,18 @@ import Travel from './pages/Travel';
 import Drone from './pages/Drone';
 import Wildlife from './pages/Wildlife';
 
+function ScrollToTop() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/sports" element={<Sports />} />

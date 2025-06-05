@@ -53,21 +53,21 @@ const Sports = () => {
       <div className="max-w-6xl mx-auto px-4">
         <EventSection
           title="Indian Formula 4 Weekend – Chennai Street Circuit"
-          description="A high-octane spectacle where speed meets strategy. Set against the gritty backdrop of Chennai's urban circuit, this series captures the raw thrill of India's Formula 4 showdown — sweeping corners, fierce duels, and moments that blur the line between chaos and control."
+          description="A high-octane spectacle where speed meets strategy and nerves are tested to their limits. Set against the gritty, sun-scorched backdrop of Chennai’s urban maze, this series captures the raw electricity of India’s premier Formula 4 showdown. Screaming engines echo through tight corners, while drivers thread their way through chaos and control with split-second precision. It’s not just a race — it’s choreography on asphalt, where every turn risks glory or gravel."
           folder="sports/f4-weekend"
           reverse={false}
         />
 
         <EventSection
           title="Bengaluru Karting Cup"
-          description="From screeching tires to flying rubber, this event brings karting’s underground adrenaline to light. Young racers, sharp turns, and explosive starts define the pulse of this collection — an homage to the beginning of every racer's journey."
+          description="Before the grand circuits and roaring crowds, this is where it all begins — the raw, unfiltered world of karting. The Bengaluru Karting Cup dives deep into the adrenaline-fueled chaos of young racers carving their legacy one lap at a time. With screeching tires, unpredictable overtakes, and a crowd buzzing with grassroots energy, this series is an ode to racing's most honest form."
           folder="sports/karting"
           reverse={true}
         />
 
         <EventSection
           title="Bengaluru FC Edits"
-          description="More than a game — this edit series reflects the soul of Bengaluru FC. Moments of celebration, grit, and collective pride stitched into visual rhythms. Where emotion meets motion and the beautiful game becomes visual poetry."
+          description="This isn't just a football club — it’s a movement. In this emotional edit series, we go beyond goals and glory to capture the heartbeats of Bengaluru FC. From tunnel walks and pre-match rituals to last-minute tackles and euphoric celebrations, this story unfolds in fragments of passion. With a cinematic lens, we chronicle a journey of grit, loyalty, and the unbreakable bond between a team and its people."
           folder="sports/bfc"
           reverse={false}
         />

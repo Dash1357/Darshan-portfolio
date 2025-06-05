@@ -49,32 +49,32 @@ const Travel = () => {
         <span>Gallery</span>
       </div>
 
-      {/* Events */}
+      {/* Event Sections */}
       <div className="max-w-6xl mx-auto px-4">
         <EventSection
           title="Spiti Valley"
-          description="Desolate yet divine — Spiti is where the Earth breathes in silence. Jagged ridges, frozen rivers, and monasteries in the mist. This series captures its soul with light, shadow, and serenity etched into every frame."
+          description="Remote, rugged, and breathtakingly silent — Spiti isn’t a destination; it’s a feeling. High in the trans-Himalayan belt, this cold desert valley cradles ancient monasteries, frozen rivers, and skies that feel closer to space than Earth. This collection captures its raw solitude and sacred stillness — an invitation to slow down and absorb the untouched."
           folder="travel/spiti"
           reverse={false}
         />
 
         <EventSection
           title="Aviation"
-          description="Metal birds in graceful motion. This series frames the power and elegance of flight — from runway roars to cruising calm. A tribute to aviation’s symmetry, precision, and silent confidence."
+          description="From taxi to takeoff, this series salutes the marvel of aviation. These aren't just machines in motion — they are poetry in precision. I’ve tried to frame the symmetry of flight: the anticipation on the runway, the graceful arcs through cloud banks, the sharp lines of wings slicing through atmosphere."
           folder="travel/aviation"
           reverse={true}
         />
 
         <EventSection
           title="Astrophotography"
-          description="The universe, unrushed and infinite. Through long exposure and quiet patience, these frames reveal star trails, galaxies, and cosmic dust above remote Indian skies. A dance of light stitched into the canvas of night."
+          description="Beneath vast Indian skies, far from the noise of cities, lies a canvas most never see. This series slows time and opens the heavens — galaxies spiraling in silence, star trails painting ancient skies, and Milky Way arcs that seem too perfect to be real. These frames are born from long hours, cold fingers, and a devotion to capturing what the naked eye cannot."
           folder="travel/astro"
           reverse={false}
         />
 
         <EventSection
           title="Symmetrical Photography"
-          description="Where architecture and timing converge — symmetry is more than balance, it's emotion. This series is an exploration of lines, reflections, and structured calm, captured across cities and landscapes alike."
+          description="There’s harmony in stillness, poetry in patterns. This segment explores symmetry not as technique, but as emotion — in reflections, architecture, and aligned moments that speak to our inner balance. Whether it's a lone building mirroring its surroundings or a human silhouette centered in geometry, symmetry reveals order in a chaotic world."
           folder="travel/symmetry"
           reverse={true}
         />

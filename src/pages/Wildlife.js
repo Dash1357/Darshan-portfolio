@@ -49,25 +49,25 @@ const Wildlife = () => {
         <span>Gallery</span>
       </div>
 
-      {/* Events */}
+      {/* Event Sections */}
       <div className="max-w-6xl mx-auto px-4">
         <EventSection
           title="Kabini Wildlife Reserve"
-          description="A sanctuary where silence is broken only by a distant call. This set trails Kabini's secrets — elusive leopards, shadowy forests, and golden light pouring through ancient trees. Raw, untamed, and humbling."
+          description="Where forest meets river, and silence meets the unexpected. Kabini is where nature speaks in rustles, roars, and glances from the underbrush. This series trails the mystery of this iconic reserve — elusive leopards draped across tree limbs, elephants emerging from fog, and golden light breaking through thick canopy."
           folder="wildlife/kabini"
           reverse={false}
         />
 
         <EventSection
           title="Birds"
-          description="Feathers in motion. This series captures birds as brushstrokes in the sky — some in flight, some in stillness, each revealing nature’s palette and poise in quiet harmony."
+          description="To watch a bird in flight is to witness freedom at its purest. This series captures the grace, color, and quiet stories of avian life — from the rhythmic stillness of herons to the sudden flutters of finches mid-feed. Each frame preserves the poetry of motion and the quiet elegance of wings in the wild."
           folder="wildlife/birds"
           reverse={true}
         />
 
         <EventSection
           title="Jim Corbett Wildlife Reserve"
-          description="One of India's oldest and proudest reserves, Corbett echoes with heritage and wilderness. Misty mornings, elephant trails, and dense sal forests — a blend of power and peace told in visuals."
+          description="Legendary in name and legacy, Corbett is more than a reserve — it’s a living epic. Nestled in Uttarakhand’s rich wilderness, its landscapes carry history, mystery, and the ever-present pulse of the wild. This series brings you face-to-face with morning mists curling around sal trees, tiger trails barely visible in the mud, and the quiet confidence of elephants in their element."
           folder="wildlife/corbett"
           reverse={false}
         />

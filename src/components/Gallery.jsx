@@ -4,7 +4,8 @@ import './Gallery.css';
 const Gallery = ({ folder }) => {
   const mediaCount = 50;
   const [loadedMedia, setLoadedMedia] = useState([]);
-  const extensions = ['jpg', 'jpeg', 'mp4'];
+
+  const extensions = ['webp', 'webm']; // updated formats
 
   const handleError = (file) => {
     setLoadedMedia((prev) => prev.filter((f) => f !== file));
@@ -14,7 +15,8 @@ const Gallery = ({ folder }) => {
     const allMedia = [];
     for (let i = 1; i <= mediaCount; i++) {
       for (const ext of extensions) {
-        const fileName = `${folder}_${String(i).padStart(2, '0')}.${ext}`;
+        const baseName = folder.split('/').pop(); // e.g., 'f4-weekend'
+        const fileName = `${baseName}_${String(i).padStart(2, '0')}.${ext}`;
         allMedia.push(`/assets/${folder}/${fileName}`);
       }
     }
@@ -28,7 +30,7 @@ const Gallery = ({ folder }) => {
           const ext = file.split('.').pop().toLowerCase();
           return (
             <div key={idx} className="tile-wrapper">
-              {ext === 'mp4' ? (
+              {ext === 'webm' ? (
                 <video
                   src={file}
                   controls

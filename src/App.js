@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero';
 import Sports from './pages/Sports';
 import Travel from './pages/Travel';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/drone" element={<Drone />} />
         <Route path="/wildlife" element={<Wildlife />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }

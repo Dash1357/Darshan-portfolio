@@ -1,0 +1,43 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--gut);
+  border-bottom: 1px solid var(--line);
+  background: rgba(10, 10, 11, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.nav-mark { display: flex; align-items: center; gap: 10px; }
+.nav-mark img { width: 30px; height: auto; }
+.nav-mark span { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+.nav-links {
+  display: flex;
+  gap: clamp(14px, 3vw, 30px);
+  animation: navIn 0.45s var(--ease);
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+@keyframes navIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.nav-links a {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sub);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+  flex-shrink: 0;
+}
+.nav-links a:hover { color: var(--hi, var(--paper)); border-bottom-color: var(--line); }
+@media (max-width: 520px) {
+  .nav-mark span { display: none; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.1em; }
+}

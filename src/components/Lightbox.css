@@ -1,0 +1,40 @@
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(6, 6, 7, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lb-media { max-width: 92vw; max-height: 84vh; border-radius: 2px; }
+.lb-count {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--sub);
+}
+.lb-count b { font-weight: 500; }
+.lb button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: var(--paper);
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.25s, transform 0.25s var(--ease);
+}
+.lb button:hover { opacity: 1; }
+.lb-x { top: 12px; right: 14px; }
+.lb-prev { left: 6px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 6px; top: 50%; transform: translateY(-50%); }
+.lb-prev:hover { transform: translateY(-50%) translateX(-3px); }
+.lb-next:hover { transform: translateY(-50%) translateX(3px); }
+.lb svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }

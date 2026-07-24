@@ -1,0 +1,58 @@
+/* =====================================================================
+   Design system — Darshan Jhawar portfolio
+   Canvas: near-black gallery. Colour comes from the photographs;
+   each category carries one accent, used only at hairline scale.
+   ===================================================================== */
+
+:root {
+  --ink: #0a0a0b;
+  --raised: #101012;
+  --paper: #ededea;
+  --sub: #9a9a96;
+  --faint: #55554f;
+  --line: rgba(237, 237, 234, 0.1);
+  --red: #c01818;      /* brand red — from the logo */
+  --red-hi: #e04040;
+
+  --disp: "Familjen Grotesk", system-ui, sans-serif;
+  --ui: "Inter", system-ui, -apple-system, sans-serif;
+
+  --gut: clamp(20px, 5vw, 64px);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--ui);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--red); color: var(--paper); }
+
+a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+button { font-family: var(--ui); }
+
+:focus-visible { outline: 1px solid var(--red-hi); outline-offset: 3px; }
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sub);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto; }
+}

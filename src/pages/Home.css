@@ -95,6 +95,15 @@
   display: block;
   background: var(--raised);
 }
+/* An odd category count leaves the last tile orphaned in the 2-up grid with a
+   dead half-row beside it. Span it full width so the row reads as deliberate.
+   The 32/10 ratio is 16/10 doubled, so the banded row keeps the same height as
+   a normal row. Guarded on :nth-child(odd) so an even count (a 6th category)
+   reverts to the plain grid with no edit here. */
+.cat:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  aspect-ratio: 32 / 10;
+}
 .cat img {
   width: 100%;
   height: 100%;
@@ -151,4 +160,7 @@
 @media (max-width: 860px) {
   .hero-inner { flex-direction: column; align-items: flex-start; gap: 30px; }
   .cats { grid-template-columns: 1fr; }
+  /* Single column: nothing is orphaned, so the last tile keeps the normal
+     ratio instead of flattening into a 32/10 strip. */
+  .cat:last-child:nth-child(odd) { aspect-ratio: 16 / 10; }
 }

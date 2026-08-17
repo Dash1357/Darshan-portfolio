@@ -96,13 +96,19 @@
   background: var(--raised);
 }
 /* An odd category count leaves the last tile orphaned in the 2-up grid with a
-   dead half-row beside it. Span it full width so the row reads as deliberate.
-   The 32/10 ratio is 16/10 doubled, so the banded row keeps the same height as
-   a normal row. Guarded on :nth-child(odd) so an even count (a 6th category)
-   reverts to the plain grid with no edit here. */
+   dead half-row beside it. Centre it instead of stretching it: the tile spans
+   the row so it can centre, but is held to exactly one column's width, so the
+   leftover space splits evenly on both sides and reads as deliberate.
+   Deliberately NOT a full-width band with its own aspect-ratio — that ties
+   height to viewport width with no ceiling (598px at 1920, ~1200px at 4K) and
+   crops a non-panoramic photo to a slice. At one column wide it inherits the
+   16/10 ratio, crop and scaling of every sibling tile, so it behaves the same
+   on a phone as on a 4K panel with nothing to tune per breakpoint.
+   Guarded on :nth-child(odd) so an even count reverts to the plain grid. */
 .cat:last-child:nth-child(odd) {
   grid-column: 1 / -1;
-  aspect-ratio: 32 / 10;
+  width: calc((100% - 3px) / 2); /* one column, matching the 3px grid gap */
+  margin-inline: auto;
 }
 .cat img {
   width: 100%;
@@ -160,7 +166,7 @@
 @media (max-width: 860px) {
   .hero-inner { flex-direction: column; align-items: flex-start; gap: 30px; }
   .cats { grid-template-columns: 1fr; }
-  /* Single column: nothing is orphaned, so the last tile keeps the normal
-     ratio instead of flattening into a 32/10 strip. */
-  .cat:last-child:nth-child(odd) { aspect-ratio: 16 / 10; }
+  /* Single column: nothing is orphaned, so the last tile is full width like
+     every other one rather than a half-width centred card. */
+  .cat:last-child:nth-child(odd) { width: 100%; }
 }

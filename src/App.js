@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
+import { ROUTER_FUTURE } from "./routerFuture";
+
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
@@ -33,9 +35,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
+    <BrowserRouter future={ROUTER_FUTURE}>
       <ScrollToTop />
       <Nav />
       <AnimatedRoutes />

@@ -93,6 +93,36 @@ optimize_media.py           ← media pipeline (python3 optimize_media.py <in> <
   update URLs in `public/index.html` (og:url/og:image), `robots.txt`,
   `sitemap.xml`.
 
+## Testing
+
+`npm test` (watch) or `CI=true npm test` (single run). Jest + React Testing
+Library via react-scripts; `src/setupTests.js` loads jest-dom matchers. Test
+libraries are devDependencies only — they do not touch the bundle.
+
+Three suites, 76 tests:
+
+- `src/content/site.test.js` — pins site.js, manifest.json and the files on
+  disk to each other. This is the suite that matters most: the content
+  workflow fails silently, so it asserts every series folder exists in the
+  manifest, every manifest folder is referenced by a series, and every
+  referenced media file is actually on disk. Forget `npm run manifest` after
+  adding a series and this goes red instead of the page quietly rendering
+  empty.
+- `src/components/Lightbox.test.js` — guards the `createPortal(..., body)`
+  requirement (see the gotcha above), Escape/backdrop/button closing, clean
+  unmount, body-scroll restore, and the index wraparound.
+- `src/components/Nav.test.js` — the "categories in exactly one place per
+  screen" rule, active-link marking, and the `document.fonts.ready` re-scroll.
+
+**What these tests cannot cover:** jsdom has no layout engine, so anything
+geometric — the tile grid, the 2000px grid cap, the centred orphan tile,
+mobile nav overflow, the fixed lightbox filling the viewport — is invisible
+here. Those are browser checks; run `/qa http://localhost:3000` for them.
+A green `npm test` is not evidence that the layout is right.
+
+Router v7 future flags live in `src/routerFuture.js` and are imported by both
+`App.js` and the tests, so tests run on the same router semantics as the site.
+
 ## Open tasks / backlog
 
 1. DONE: hero letter-by-letter title reveal shipped (Darshan's pick after

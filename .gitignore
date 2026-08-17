@@ -35,3 +35,4 @@ coverage/
 
 # local dev tooling helper (machine-specific PATH workaround, not part of the site)
 start-dev.cmd
+.gstack/

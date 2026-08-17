@@ -22,6 +22,13 @@
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* Nav.js scrolls the active link into view with inline:"nearest", which stops
+     the moment the link's edge meets the container's, leaving it flush against
+     the screen edge on mobile. scroll-padding is what scrollIntoView measures
+     that edge against, so this buys the link breathing room on both sides.
+     Container padding does not work here — Chrome collapses a scroll
+     container's trailing padding. */
+  scroll-padding-inline: 12px;
 }
 .nav-links::-webkit-scrollbar { display: none; }
 @keyframes navIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
@@ -39,5 +46,10 @@
 @media (max-width: 520px) {
   .nav-mark span { display: none; }
   .nav-links { gap: 16px; }
+  /* Creates the trailing space that scroll-padding-inline above then honours.
+     Both halves are required: the padding alone has nothing to scroll into
+     because the last link ends flush with the content box, and the margin
+     alone still lands flush because inline:"nearest" stops at the edge. */
+  .nav-links a:last-child { margin-right: 12px; }
   .nav-links a { font-size: 11px; letter-spacing: 0.1em; }
 }

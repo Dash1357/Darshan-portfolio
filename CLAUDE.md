@@ -141,3 +141,16 @@ optimize_media.py           ← media pipeline (python3 optimize_media.py <in> <
   don't fit). The effect re-runs on `document.fonts.ready` — needed because
   the initial run can fire before Familjen Grotesk finishes loading/
   reflowing, undershooting the scroll target.
+
+## gstack (recommended)
+
+This project uses [gstack](https://github.com/garrytan/gstack) for AI-assisted workflows.
+Install it for the best experience:
+
+```bash
+git clone --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
+cd ~/.claude/skills/gstack && ./setup --team
+```
+
+Skills like /qa, /ship, /review, /investigate, and /browse become available after install.
+Use /browse for all web browsing. Use ~/.claude/skills/gstack/... for gstack file paths.

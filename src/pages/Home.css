@@ -87,6 +87,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 3px;
   padding: 3px;
+  /* Tiles are 16/10, so with no ceiling their height tracks viewport width
+     forever: 597px tall at 1920, 797px at 2560, 1197px on a 4K panel. Cap the
+     grid so the tiles stop growing and centre the leftover space. 2000px is
+     chosen to sit just above a 1920 display, so every common screen renders
+     exactly as before and only larger panels are contained. */
+  max-width: 2000px;
+  margin-inline: auto;
 }
 .cat {
   position: relative;

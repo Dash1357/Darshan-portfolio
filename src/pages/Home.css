@@ -50,7 +50,20 @@
   max-width: 46ch;
   margin: 4px 0 16px;
 }
-.hero-sub { color: var(--sub); }
+
+/* Hero text sits over a video whose frames run from near-black sky to bright
+   overcast, so a fixed grey is readable on some frames and invisible on
+   others. Two changes: lift the small caps off the secondary grey, and give
+   every hero text element the same shadow the category tiles already use for
+   text over photos. Readability here must not depend on which frame is
+   showing. The shadow does the heavy lifting; --sub stays the secondary
+   colour everywhere it sits on solid canvas. */
+.hero-inner .label { color: var(--paper); }
+.hero-inner .label,
+.hero-inner h1,
+.hero-inner .hero-manifesto,
+.hero-inner .scrollcue span { text-shadow: 0 1px 12px rgba(10, 10, 11, 0.75); }
+.hero-inner .hero-sub { color: var(--sub); } /* stays secondary: outranks .hero-inner .label */
 
 /* ---- letter-by-letter title reveal ---- */
 .letter-reveal { display: inline-block; }

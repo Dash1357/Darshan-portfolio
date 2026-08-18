@@ -147,3 +147,28 @@ describe("site copy", () => {
     expect(HOME.manifesto).toBeTruthy();
   });
 });
+
+describe("no duplicate media within a series", () => {
+  /*
+   * Reported by a tester as "photos repeat, and the ones side by side are the
+   * same". Three exact copies had crept into sports/btm-fc and more into
+   * birds and stretch, so the same frame rendered twice within one screen.
+   * Hash every referenced file and fail if a series carries the same image
+   * twice. Scoped per folder on purpose: a category tile in assets/home
+   * legitimately reuses a gallery photo, and that must stay allowed.
+   */
+  const crypto = require("crypto");
+
+  it.each(Object.entries(manifest))("%s has no repeated frame", (folder, items) => {
+    const seen = new Map();
+    const dupes = [];
+    items.forEach((item) => {
+      const file = path.join(PUBLIC_DIR, "assets", folder, item.file);
+      if (!fs.existsSync(file)) return; // covered by the on-disk test above
+      const hash = crypto.createHash("md5").update(fs.readFileSync(file)).digest("hex");
+      if (seen.has(hash)) dupes.push(`${item.file} is identical to ${seen.get(hash)}`);
+      else seen.set(hash, item.file);
+    });
+    expect(dupes).toEqual([]);
+  });
+});

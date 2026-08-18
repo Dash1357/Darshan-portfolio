@@ -161,12 +161,6 @@
    "h": 1537
   },
   {
-   "file": "stretch_18.jpg",
-   "type": "image",
-   "w": 1023,
-   "h": 1537
-  },
-  {
    "file": "stretch_19.jpg",
    "type": "image",
    "w": 1086,
@@ -387,24 +381,6 @@
    "type": "image",
    "w": 2200,
    "h": 2199
-  },
-  {
-   "file": "btm_06.jpg",
-   "type": "image",
-   "w": 2200,
-   "h": 2200
-  },
-  {
-   "file": "btm_07.jpg",
-   "type": "image",
-   "w": 2200,
-   "h": 2199
-  },
-  {
-   "file": "btm_08.jpg",
-   "type": "image",
-   "w": 2200,
-   "h": 2200
   },
   {
    "file": "btm_09.jpg",
@@ -1070,12 +1046,6 @@
   },
   {
    "file": "birds_14.webp",
-   "type": "image",
-   "w": 1650,
-   "h": 2200
-  },
-  {
-   "file": "birds_15.webp",
    "type": "image",
    "w": 1650,
    "h": 2200
